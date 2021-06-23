@@ -1,9 +1,11 @@
 // @flow
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Platform } from 'react-native'
 
 const calendarHeight = 2400
 // const eventPaddingLeft = 4
 const leftMargin = 50 - 1
+const fontFamily = Platform.OS == 'android'? 'Roboto':'Helvetica Neue';
+
 
 export default function styleConstructor (
   theme = {}
@@ -94,7 +96,7 @@ export default function styleConstructor (
       left: 15,
       color: 'rgb(170,170,170)',
       fontSize: 10,
-      fontFamily: 'Helvetica Neue',
+      fontFamily: fontFamily,
       fontWeight: '500',
       ...theme.timeLabel
     }
